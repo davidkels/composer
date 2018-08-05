@@ -420,7 +420,7 @@ class HLFConnection extends Connection {
         const bnaPackage = businessNetworkDefinition.getMetadata().getPackageJson();
         bnaPackage.dependencies = this._createPackageDependencies(bnaPackage.dependencies);
         const scripts = bnaPackage.scripts || {};
-        scripts.start = 'start-network';
+        scripts.start = 'NODE_PATH=$PWD/node_modules start-network';
         bnaPackage.scripts = scripts;
 
         const installDir = await this.temp.mkdir(chaincodePathSection);

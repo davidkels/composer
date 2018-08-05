@@ -53,7 +53,9 @@ class ScriptCompiler {
         // Define the globals.
         const globals = {
             assert,
-            request
+            request,
+            require,
+            process
         };
 
         // Add the start section.
